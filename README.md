@@ -17,7 +17,7 @@ To get everything up and running, follow these steps:
 ** If you are using a mac, you can share your network connection out to ethernet, connect the pi, run arp -a to find all devices, then look for something tagged [bridge] rather than [ethernet]
 * Install RPi.GPIO python module
 * Turn on your drone and find the SSID (use your main computer)
-* Set up your /etc/network/interfaces to find the wifi network (see below)
+* Set up your /etc/network/interfaces to find the wifi network (see the interfaces example in the drone directory)
 * Connect all your devices using an ethernet port that can see the internet (your hue needs this)
 * Get your philips hue setup using the web
 * Verify that your hue lightbulb is responding to the web commands (on/off)
@@ -36,18 +36,3 @@ Once everything is tested and set up:
 * On your computer start cylon-sphero-hue.js
 * Sit back and pray :-)
 
-/etc/network/interfaces on the pi
-auto lo
-
-iface lo inet loopback
-iface eth0 inet dhcp
-
-allow-hotplug wlan0
-auto wlan0
-
-#iface wlan0 inet dhcp
-#    wpa-ssid "Synedra_2.4"
-#    wpa-psk "Dr.Pepper"
-
-iface wlan0 inet dhcp
-     wireless-essid ardrone2_048714
